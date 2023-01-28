@@ -1,0 +1,60 @@
+body {
+  padding: 10%;
+  font-family: sans-serif;
+}
+
+button {
+  padding: 1em;
+  border: 0;
+  margin: 0.25em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.f-red {
+  background: #bd2130;
+}
+.f-red:hover {
+  background: #e90d00;
+}
+
+.f-green {
+  background: #28a745;
+}
+.f-green:hover {
+  background: #208e2c;
+}
+
+.f-blue {
+  background: #007bff;
+}
+.f-blue:hover {
+  background: #004b8c;
+}
+
+.f-all {
+  background: #333;
+}
+.f-all:hover {
+  background: #0d0d0d;
+}
+
+.red,
+.green,
+.blue {
+  color: #fff;
+  padding: 1em;
+  margin-bottom: 0.25em;
+}
+
+.red {
+  background: #bd2130;
+}
+
+.green {
+  background: #28a745;
+}
+
+.blue {
+  background: #007bff;
+}
