@@ -1,38 +1,34 @@
 $(document).ready(function () {
-    var $inp = $('.input-cart-number')
-    var $cardCcv = $('#card-ccv')
-    var $ccv = $('.ccv div')
+  var $inp = $(".input-cart-number");
+  var $ccv = $("#card-ccv");
+  var $creditBox = $(".credit-card-box");
+  var $ccvDiv = $(".ccv div");
 
+  $inp.on("input", function () {
+    var $val = $(this).val(); // 'ads45'
+    var $length = $val.length;
+    var $maxLength = $(this).attr("maxlength"); // 4 45 6
 
-    $inp.on('input', function () {
-        var val = $(this).val()
-        var length = val.length
-        var idx = $(this).index()
-        var $span = $(`.number span:nth-child(${idx})`)
+    if ($length == $maxLength) {
+      $(this).next().focus();
+    }
 
-        var maxLength = +$(this).attr('maxlength')
+    var $idx = $(this).index(); // 2
 
-        if (length >= maxLength) {
-            $(this).next().focus()
-        }
+    $(`.number span:nth-child(${$idx})`).html($val);
+  });
 
-        $span.html(val)
-    })
+  $ccv.on("focus", function () {
+    $creditBox.addClass("hover");
+  });
 
-    $cardCcv.on('focus', function () {
-        $('.credit-card-box .flip').css({
-            'transform': 'rotateY(180deg)'
-        })
-    })
+  $ccv.on("input", function () {
+    var $val = $(this).val();
 
-    $cardCcv.on('blur', function () {
-        $('.credit-card-box .flip').css({
-            'transform': 'rotateY(0deg)'
-        })
-    })
+    $ccvDiv.html($val);
+  });
 
-    $cardCcv.on('input', function () {
-        $ccv.html($(this).val())
-    })
-
+  $ccv.on("blur", function () {
+    $creditBox.removeClass("hover");
+  });
 });

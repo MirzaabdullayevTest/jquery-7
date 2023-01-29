@@ -1,15 +1,14 @@
 $(document).ready(function () {
-    $('#small a').click(function (e) {
-        e.preventDefault()
-        var $attr = $(this).attr('href')
+  var $big = $("#big img");
 
-        // $('#big img').attr('src', $attr)
-        // fadeIn // d-block // fade-out // d-none
+  $("#small a").click(function (e) {
+    e.preventDefault();
+    var $attr = $(this).attr("href");
 
-        $('#big img').fadeOut(1000, function () {
-            $(this).attr('src', $attr)
+    $big.fadeOut(function () {
+      $big.attr("src", $attr);
 
-            $('#big img').fadeIn(1000)
-        })
-    })
+      $(this).fadeIn();
+    });
+  });
 });
